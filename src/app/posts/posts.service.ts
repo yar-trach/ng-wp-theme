@@ -25,7 +25,7 @@ export class PostsService {
   getPost(slug): Observable<Post> {
 
       return this.http
-        .get(this._wpBase + `posts?filter[name]=${slug}`)
+        .get(this._wpBase + `posts?slug=${slug}`)
         .map((res: Response) => res.json());
 
   }
