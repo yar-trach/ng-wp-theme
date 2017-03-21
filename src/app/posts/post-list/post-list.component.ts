@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Post } from '../post';
 import { PostsService } from '../posts.service';
 import { Router } from '@angular/router';
@@ -14,7 +14,7 @@ export class PostListComponent implements OnInit {
   posts: Post[];
   error: string;
 
-  constructor( private postsService: PostsService, private router: Router, private changeDetectorRef: ChangeDetectorRef ) { }
+  constructor( private postsService: PostsService, private router: Router ) { }
 
   getPosts(){
     this.postsService
