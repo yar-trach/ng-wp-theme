@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class PostListComponent implements OnInit {
 
   posts: Post[];
+  error: string;
 
   constructor( private postsService: PostsService, private router: Router ) { }
 
@@ -19,8 +20,13 @@ export class PostListComponent implements OnInit {
     this.postsService
       .getPosts()
       .subscribe(res => {
+        // success
         this.posts = res;
+      }, err => {
+        // error
+        this.error = err;
       });
+
   }
 
   ngOnInit() {
