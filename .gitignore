@@ -33,3 +33,5 @@ testem.log
 Thumbs.db
 
 .remote-sync.json
+.editorconfig
+yarn.lock
