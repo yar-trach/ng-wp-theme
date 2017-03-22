@@ -12,19 +12,14 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class PostSingleComponent implements OnInit {
 
   post: Post;
-  error: any;
 
   constructor( private postsService: PostsService, private route: ActivatedRoute ) { }
 
   getPost(slug){
     this.postsService
       .getPost(slug)
-      .subscribe( (res) => {
-        // success
+      .subscribe(res => {
         this.post = res[0];
-      }, (err) => {
-        // error
-        this.error = err;
       });
   }
 
