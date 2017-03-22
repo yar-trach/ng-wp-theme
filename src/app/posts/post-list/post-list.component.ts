@@ -12,22 +12,21 @@ import { Router } from '@angular/router';
 export class PostListComponent implements OnInit {
 
   posts: Post[];
-  error: String;
+  error: string;
 
   constructor( private postsService: PostsService, private router: Router ) { }
 
   getPosts(){
     this.postsService
       .getPosts()
-
-      .subscribe( (res) => {
+      .subscribe(res => {
         // success
         this.posts = res;
-      }, (err) => {
+      }, err => {
         // error
         this.error = err;
-        
       });
+
   }
 
   ngOnInit() {
