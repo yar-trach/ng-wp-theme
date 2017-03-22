@@ -19,10 +19,10 @@ export class PostSingleComponent implements OnInit {
   getPost(slug){
     this.postsService
       .getPost(slug)
-      .subscribe(res => {
+      .subscribe( (res) => {
         // success
         this.post = res[0];
-      }, function(err) {
+      }, (err) => {
         // error
         this.error = err;
       });
