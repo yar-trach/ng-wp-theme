@@ -19,10 +19,10 @@ export class PostListComponent implements OnInit {
   getPosts(){
     this.postsService
       .getPosts()
-      .subscribe(res => {
+      .subscribe( (res) => {
         // success
         this.posts = res;
-      }, err => {
+      }, (err) => {
         // error
         this.error = err;
       });
