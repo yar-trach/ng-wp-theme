@@ -6,7 +6,7 @@ A minimal WordPress theme that runs off of an Angular 2 app. Built for the tutor
 
 First, run `npm install`.
 
-Inside of src/app/posts, open posts.service.ts. On the line where it says `private postsUrl = "http://{YOUR_SITE_HERE}.com/wp-json/wp/v2/";`, just place in your site name.
+Inside the environments folder, you will find two files -- one for production and one for development. Open each up and set wpBase to whatever you dev and live sites are. 
 
 For development, simply run `ng serve`, in the terminal inside the project folder, and the CLI will do the rest. The content of the site is managed from the WordPress admin panel.  
 
