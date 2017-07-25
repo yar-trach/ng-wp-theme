@@ -33,3 +33,6 @@ testem.log
 Thumbs.db
 
 .remote-sync.json
+package-lock.json
+
+/src/environments/*
