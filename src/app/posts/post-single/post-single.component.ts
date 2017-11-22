@@ -6,27 +6,25 @@ import { Post } from '../post';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
-  selector: 'app-post-single',
-  templateUrl: './post-single.component.html',
-  styleUrls: ['./post-single.component.css'],
-  providers: [PostsService]
+	selector: 'app-post-single',
+	templateUrl: './post-single.component.html',
+	styleUrls: ['./post-single.component.css'],
+	providers: [PostsService]
 })
 export class PostSingleComponent implements OnInit {
 
-  post: Post;
+	post: Post;
 
-  constructor( private postsService: PostsService, private route: ActivatedRoute ) { }
+	constructor(private postsService: PostsService, private route: ActivatedRoute) { }
 
-  ngOnInit() {
+	ngOnInit() {
 
-    this.route.paramMap
-    .switchMap((params: ParamMap) =>
-      this.postsService.getPost(params.get('slug')))
-    .subscribe(
-      (post: Post[]) => this.post = post[0],
-      (err: HttpErrorResponse) => err.error instanceof Error ? console.log('An error occurred:', err.error.message) : console.log(`Backend returned code ${err.status}, body was: ${err.error}`)
-    );
-
-  }
-
+		this.route.paramMap
+			.switchMap((params: ParamMap) =>
+				this.postsService.getPost(params.get('slug')))
+			.subscribe(
+			(post: Post[]) => this.post = post[0],
+			(err: HttpErrorResponse) => err.error instanceof Error ? console.log('An error occurred:', err.error.message) : console.log(`Backend returned code ${err.status}, body was: ${err.error}`)
+			);
+	}
 }

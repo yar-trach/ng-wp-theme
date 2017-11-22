@@ -9,18 +9,18 @@ import { Wpng2RoutingModule } from './app-routing.module';
 import { PostSingleComponent } from './posts/post-single/post-single.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PostListComponent,
-    PostSingleComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    Wpng2RoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		PostListComponent,
+		PostSingleComponent
+	],
+	imports: [
+		BrowserModule,
+		FormsModule,
+		HttpClientModule,
+		Wpng2RoutingModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,20 +7,20 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class PostsService {
 
-  private _wpBase = environment.wpBase;
+	private _wpBase = environment.wpBase;
 
-  constructor(private http: HttpClient) { }
+	constructor(private http: HttpClient) { }
 
-  getPosts(): Observable<Post[]> {
+	getPosts(): Observable<Post[]> {
 
-      return this.http.get<Post[]>(this._wpBase + 'posts');
+		return this.http.get<Post[]>(this._wpBase + 'posts');
 
-  }
+	}
 
-  getPost(slug: string): Observable<Post[]> {
+	getPost(slug: string): Observable<Post[]> {
 
-      return this.http.get<Post[]>(this._wpBase + `posts?slug=${slug}`);
+		return this.http.get<Post[]>(this._wpBase + `posts?slug=${slug}`);
 
-  }
+	}
 
 }
